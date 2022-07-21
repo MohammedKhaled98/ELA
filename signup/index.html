@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <row class="row justify-content-center m-4">
+            <div class="col-md-6" style="text-align:right">
+                <form method="POST" action="insMEM.php">
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">* الاسم</label>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" name="Name"
+                                placeholder="الاسم كما هو موجود في الهوية الوطنية"  required="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">* البريد الالكتروني</label>
+                        <div class="col-xs-5">
+                            <input type="email" class="form-control" name="email" required="" />
+                        </div>
+                    </div>
+                    
+                     <div class="form-group">
+                        <label class="col-xs-3 control-label">* كلمة المرور</label>
+                        <div class="col-xs-5">
+                            <input type="password" class="form-control" name="pass" required=""  />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">* رقم الجوال</label>
+                        <div class="col-xs-5">
+                            <input type="text" class="form-control" name="Phone"  required="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">* التخصص</label>
+                        <div class="col-xs-5">
+                            <input type="text" class="form-control" name="major"  required=""/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">المؤهل الدراسي</label>
+                        <select class="custom-select" name="edulevel" multiple>
+                            <option selected>دبلوم</option>
+                            <option value="بكالوريوس">بكالوريوس</option>
+                            <option value="ماجستير">ماجستير</option>
+                            <option value="دكتوراه">دكتوراه</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">* اسم الجامعة</label>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" name="UniName" required="" />
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                        <div class="col-auto my-1">
+                            <label class="mr-sm-2 sr-only" for="year">سنة التخرج</label>
+                            <input required type="date" class="form-control mb-2 mr-sm-2" name="gradyear"
+                                placeholder="1/1/2022">
+                        </div>
+                        <div class="col-auto my-1">
+                            <div class="custom-control custom-checkbox mr-sm-2">
+                                <input type="checkbox" id="graduationstatus" class="custom-control-input" name="gradst">
+                                <label class="custom-control-label" for="graduationstatus">لم اتخرج بعد!</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-row ">
+                         <div class="form-group">
+                        <label class="col-xs-3 control-label">المعدل</label>
+                        <div class="col-xs-4">
+                            <input type="text" class="form-control" name="gpa" />
+                        </div>
+                          <label class="col-xs-3 control-label">من</label>
+                        <div class="col-xs-4">
+                        <select class="custom-select mr-sm-2" name="scale">
+                                <option selected>4</option>
+                               
+                                <option value="2">5</option>
+                                <option value="3">100</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                        <div class="col-auto my-1">
+                            <p>معدلك لايؤثر على فرصتك في التسجيل أو التقدم على البرامج المتاحة😁</p>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>اذكر لنا شهادتك المهنية</label>
+                        <textarea class="form-control" name="certificates" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>اذكر لنا مهاراتك العملية</label>
+                        <textarea class="form-control" name="skills" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-row align-items-center">
+                        <h6>حالتك الان</h6>
+                        <div class="col-auto my-1">
+                            <label class="mr-sm-2 sr-only">Status</label>
+                            <select class="custom-select mr-sm-2" name="status">
+                                <option vlaue="حديث تخرج وابحث عن عمل"  selected>حديث التخرج وابحث عن عمل</option>
+                                <option value="مستقيل ولدي خبره عملية وابحث عن عمل">مستقيل ولدي خبره عملية وابحث عن عمل</option>
+                                <option value="اعمل في مجال مختلف عن مجال اهتمامي وشغفي">اعمل في مجال مختلف عن مجال اهتمامي وشغفي</option>
+                                <option value="اعمل ولكن ابحث عن فرص جديدة">اعمل ولكن ابحث عن فرص جديدة</option>
+                                <option value="اعمل وسعيد في وظيفتي الحالية">اعمل وسعيد في وظيفتي الحالية</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+  
+                    <div class="form-group pt-3">
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <div class="checkbox">
+                                <label>
+                               
+                                
+                                    <input type="checkbox" name="agree" value="agree"  required="" /> أوافق على جميع <a href="https://www.w3schools.com">الشروط والاحكام</a>
+                                    وسياية الخصوصية الخاصة بجمعية التوطين الهندسي
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h6>هل تود الانتساب الى جمعية التوطين الهندسي من خلال الاشتراك معنا ؟ <a href="https://www.w3schools.com">لمعرفة مزايا وصلاحيات العضو المنتسب</a></h6> 
+                 <div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    	 	&nbsp; 	&nbsp; نعم
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="no" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+   	&nbsp; 	&nbsp; لا
+  </label>
+</div>
+                    
+                    <div class="form-group">
+                        <div class="col-xs-9 col-xs-offset-3">
+                            <button type="submit" class="btn btn-primary">تسجيل</button>
+                              </form>
+                        </div>
+                    </div>
+               
+            </div>
+            <div class="col-md-6" style="text-align:right">
+                <img src="logo.jpg" class="img-fluid" alt="...">
+            </div>
+        </row>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
